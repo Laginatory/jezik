@@ -1,31 +1,22 @@
 'use client'
-import { useState } from 'react'
-
-const choices = ['👋', '🌎', '😊', '🍕', '🏃']
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { supabase } from '@/lib/supabaseClient'
+import EmojiPhraseChallenge from '../components/EmojiPhraseChallenge'
 
 export default function Challenge() {
-  const [phrase, setPhrase] = useState([])
+  const router = useRouter()
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (!session) router.push('/')
+    })
+  }, [router])
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 space-y-8">
-      <h1 className="text-2xl font-semibold">Build a phrase</h1>
-      <div className="flex gap-2">
-        {choices.map((c, idx) => (
-          <button
-            key={idx}
-            onClick={() => setPhrase([...phrase, c])}
-            className="text-3xl p-2 rounded bg-gray-100 hover:bg-gray-200"
-          >
-            {c}
-          </button>
-        ))}
-      </div>
-      <div className="text-4xl h-12 flex items-center">{phrase.join(' ')}</div>
-      <button
-        onClick={() => setPhrase([])}
-        className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300"
-      >
-        Clear
-      </button>
+      <h1 className="text-2xl font-semibold">Guess the phrase</h1>
+      <EmojiPhraseChallenge />
     </div>
   )
 }
