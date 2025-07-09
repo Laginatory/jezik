@@ -27,7 +27,7 @@ export default function LanguageSelector() {
           <button
             key={l.code}
             onClick={() => selectLanguage(l.code)}
-            className="flex flex-col items-center p-4 rounded-lg bg-gray-100 hover:bg-gray-200"
+            className="elite-btn flex flex-col items-center p-4"
           >
             <span className="text-4xl">{l.flag}</span>
             <span className="mt-2 text-sm">{l.name}</span>

@@ -26,15 +26,15 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 space-y-8">
       <LanguageSelector />
-      <Link href="/challenge" className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+      <Link href="/challenge" className="elite-btn">
         Challenge
       </Link>
       {session ? (
-        <button onClick={signOut} className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+        <button onClick={signOut} className="elite-btn">
           Sign out
         </button>
       ) : (
-        <Link href="/login" className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+        <Link href="/login" className="elite-btn">
           Sign in
         </Link>
       )}

@@ -52,7 +52,7 @@ export default function EmojiQuiz() {
           <button
             key={w}
             onClick={() => handleGuess(w)}
-            className="p-2 rounded bg-gray-100 hover:bg-gray-200"
+            className="elite-btn"
           >
             {w}
           </button>
