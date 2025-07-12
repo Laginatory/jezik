@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .elite-btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-pink-500 shadow-md transition-all duration-200 ease-out transform;
+  }
+  .elite-btn:hover {
+    @apply scale-105 shadow-lg;
+  }
+  .elite-btn:active {
+    @apply scale-95;
+  }
+}

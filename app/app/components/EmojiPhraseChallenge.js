@@ -64,7 +64,7 @@ export default function EmojiPhraseChallenge() {
           />
           <button
             onClick={checkAnswer}
-            className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300"
+            className="elite-btn"
           >
             Guess
           </button>
@@ -74,7 +74,7 @@ export default function EmojiPhraseChallenge() {
       {status !== 'playing' && (
         <button
           onClick={nextPhrase}
-          className="mt-2 px-4 py-2 rounded bg-gray-200 hover:bg-gray-300"
+          className="elite-btn mt-2"
         >
           Next
         </button>
